@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#About {
+  background-image: url("../images/desktop/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 576px) {
+  #About {
+    background-image: url("../images/mobile/image-hero.jpg");
+    background-position: center;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-10 py-2 my-0 uppercase border-2  tracking-widest
+    hover:text-white hover:bg-black border-black font-alata;
+  }
+}
+
+.before-hover {
+  @apply relative before:content-[''] before:absolute before:bottom-[-2px] before:w-0 before:h-0.5 before:transition-all delay-1000 before:rounded-sm before:bg-white hover:before:w-full;
+}
+
+.grid-container {
+  @apply flex flex-col  w-full space-y-6 text-2xl text-white uppercase md:flex-row md:space-y-0 md:space-x-8 mb-8;
+}
+
+.hamburger {
+  position: relative;
+  width: 25px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: 0;
+  left: 0;
+  background-color: white;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  translate: 0 7px;
+}
+
+.hamburger-bottom {
+  translate: 0 14px;
+}
+
+.active .hamburger-middle {
+  display: none;
+}
+
+.active .hamburger-top {
+  rotate: 45deg;
+  translate: 6px 6px;
+}
+
+.active .hamburger-bottom {
+  rotate: -45deg;
+  translate: 6px 6px;
+}
