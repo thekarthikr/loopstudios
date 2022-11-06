@@ -30,5 +30,5 @@ npm run build
 
 You only need to deploy your html files and css/style.css
 
+![Uploading desktop-design.jpg…](desktop-design.jpg)
 
-![Uploading desktop-design.jpg…]()
